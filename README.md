@@ -2,15 +2,26 @@
 
 ## Project Structure
 
+```text
 ├── data
-│ └── parsed_json
-│ └── flow_automate_pitch_parsed.json
+│   └── parsed_json
+│       └── flow_automate_pitch_parsed.json
+├── README.md
 ├── requirements.txt
 ├── run_etl.py
 ├── src
-│ ├── api
-│ └── etl
-└── venv
+│   ├── api
+│   │   ├── __init__.py
+│   │   ├── main.py
+│   │   ├── routes.py
+│   │   └── schema.py
+│   ├── etl
+│   │   ├── __init__.py
+│   │   ├── 1_extract_data.py
+│   │   ├── 2_transform.py
+│   │   └── 3_load.py
+│   └── logger.py
+```
 
 
 ### **Data Folder**
@@ -52,4 +63,3 @@ The API is developed using the FastAPI framework:
 
 ---
 
-This project is designed to parse PDF content, transform it into structured data, and provide a secure search API for querying across PDFs.

@@ -1,0 +1,119 @@
+{
+    "document_name": "FlowAutomate_Pitch_Deck_2025.pdf",
+    "total_pages": 4,
+    "pages": [
+      {
+        "page_number": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "FlowAutomate",
+            "metadata": {
+              "font_size": 48,
+              "font_name": "Helvetica-Bold",
+              "bounding_box": [110, 350, 485, 410]
+            }
+          },
+          {
+            "type": "text",
+            "content": "Automate Your Business. Amplify Your Growth.",
+            "metadata": {
+              "font_size": 22,
+              "font_name": "Helvetica",
+              "bounding_box": [125, 420, 470, 445]
+            }
+          }
+        ]
+      },
+      {
+        "page_number": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The Problem: Manual Work is Slowing You Down",
+            "metadata": {
+              "font_size": 24,
+              "font_name": "Helvetica-Bold",
+              "bounding_box": [72, 750, 550, 775]
+            }
+          },
+          {
+            "type": "text",
+            "content": "• Businesses in Faridabad and across India waste an average of 15 hours per week on repetitive administrative tasks that could be automated.",
+            "metadata": {
+              "font_size": 14,
+              "font_name": "Helvetica",
+              "bounding_box": [72, 650, 523, 680]
+            }
+          },
+          {
+            "type": "text",
+            "content": "• Costly data entry errors lead to incorrect reports and poor business decisions. These manual errors can reduce annual profits by up to 5%.",
+            "metadata": {
+              "font_size": 14,
+              "font_name": "Helvetica",
+              "bounding_box": [72, 580, 523, 610]
+            }
+          },
+          {
+            "type": "text",
+            "content": "• Integrating different software tools is complex and requires expensive developer resources, creating data silos and inefficient workflows.",
+            "metadata": {
+              "font_size": 14,
+              "font_name": "Helvetica",
+              "bounding_box": [72, 510, 523, 540]
+            }
+          }
+        ]
+      },
+      {
+        "page_number": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Our Solution: The FlowAutomate Platform",
+            "metadata": {
+              "font_size": 24,
+              "font_name": "Helvetica-Bold",
+              "bounding_box": [72, 750, 500, 775]
+            }
+          },
+          {
+            "type": "text",
+            "content": "A no-code platform that connects your favorite apps (like Slack, Google Sheets, and Salesforce) to automate repetitive tasks. From onboarding new clients to generating weekly reports, we handle the busywork.",
+            "metadata": {
+              "font_size": 14,
+              "font_name": "Helvetica",
+              "bounding_box": [72, 650, 523, 720]
+            }
+          }
+        ]
+      },
+      {
+        "page_number": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "Market Opportunity",
+            "metadata": {
+              "font_size": 24,
+              "font_name": "Helvetica-Bold",
+              "bounding_box": [72, 750, 350, 775]
+            }
+          },
+          {
+            "type": "table",
+            "data": [
+              ["Market Segment", "Size (USD)", "Projected Growth (YoY)"],
+              ["Total Addressable Market (TAM)", "$50 Billion", "15%"],
+              ["Serviceable Addressable Market (SAM)", "$10 Billion", "20%"],
+              ["Serviceable Obtainable Market (SOM)", "$500 Million", "35%"]
+            ],
+            "metadata": {
+              "bounding_box": [72, 500, 523, 700]
+            }
+          }
+        ]
+      }
+    ]
+  }

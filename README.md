@@ -1,75 +1,55 @@
-# PDF ETL & Search Project
-
-This project is designed to extract, transform, and search content from PDF files using **FastAPI** and **Elasticsearch/OpenSearch**. It provides a secure search API for querying structured content (text, tables, images) from PDFs.
-
----
+# Flow Automate Project
 
 ## Project Structure
 
 ├── data
-│ └── parsed_pdf
-│ └── flow_automate_pitch_parsed.json # Example parsed PDF content
-├── requirements.txt # Python dependencies
-├── run_etl.py # ETL pipeline runner
+│ └── parsed_json
+│ └── flow_automate_pitch_parsed.json
+├── requirements.txt
+├── run_etl.py
 ├── src
-│ ├── api # FastAPI application
-│ │ ├── main.py # FastAPI main entry point
-│ │ └── routes.py # API route definitions
-│ └── etl # ETL modules
-│ ├── 1_extract_data.py # PDF extraction logic
-│ ├── 2_transform.py # Transform extracted content
-│ └── 3_load.py # Load transformed data to Elasticsearch
-└── venv # Virtual environment
+│ ├── api
+│ └── etl
+└── venv
 
 
----
+### **Data Folder**
+In the `data` folder, there is a parsed PDF named `flow_automate_pitch_parsed.json`. This file represents the expected output format returned by the PDF parser.
 
-## ETL Pipeline
+### **SRC Folder**
+The `src` folder contains two subfolders: `api` and `etl`.
 
-The ETL pipeline orchestrates the extraction, transformation, and loading of PDF data into Elasticsearch.
+#### **ETL Subfolder**
+This folder contains three main files:
 
-### 1. Extract (`1_extract_data.py`)
-- Calls a PDF parser with a PDF file.
-- Returns structured JSON content including text, tables, images, and metadata.
+1. **`1_extract_data.py`**  
+   - Calls the PDF parser.
+   - Sends a PDF file and expects a parsed response in the same structure as `flow_automate_pitch_parsed.json`.
 
-### 2. Transform (`2_transform.py`)
-- Cleans text using Python’s `re` module.
-- Splits text into sentences using **NLTK**.
-- Processes images via **OCR (Tesseract)** to extract text.
-- Serializes table data into descriptive lines.
-- Consolidates all transformed content into a single variable `doc`.
+2. **`2_transform.py`**  
+   - Cleans the text using Python's `re` module.
+   - Splits text into smaller sentences using the `nltk` library.
+   - Converts images to text using OCR (`pytesseract`), then cleans and splits sentences.
+   - Serializes tables into line format.
+   - Stores all transformed data in a variable called `doc`.
 
-### 3. Load (`3_load.py`)
-- Performs **bulk upload** of transformed documents into Elasticsearch/OpenSearch.
-- Each document includes:
-  - `file_name`
-  - `page_number`
-  - `content_type`
-  - `text`
-  - `metadata`
+3. **`3_load.py`**  
+   - Bulk uploads all transformed documents to Elasticsearch.
 
----
+The ETL pipeline is orchestrated in `run_etl.py`.
 
-## API Folder (`src/api`)
+#### **API Subfolder**
+The API is developed using the FastAPI framework:
 
-- Built using **FastAPI**.
-- **Main file (`main.py`)** initializes the FastAPI app.
-- **Routes file (`routes.py`)** defines the API endpoints.
+- **`main.py`**  
+  The FastAPI main application file.
 
-### `/search` API
-- Accepts a **query** and an **API key**.
-- **API Key Security**: Requests without a valid key return **403 Unauthorized**.
-- Sends valid queries to Elasticsearch/OpenSearch.
-- Returns documents containing the search term with:
-  - `file_name`
-  - `page_number`
-  - `content_type`
-  - `text`
+- **`routes.py`**  
+  - Contains the `/search` API.
+  - Secured with an API key verified through the `get_api_key` function.
+  - If the request is valid, the user-provided query is sent to Elasticsearch.
+  - Returns the words or phrases where the query is found in the PDF documents.
 
 ---
 
-## Usage
-
-### 1. Install Dependencies
-```bash
-pip install -r requirements.txt
+This project is designed to parse PDF content, transform it into structured data, and provide a secure search API for querying across PDFs.
